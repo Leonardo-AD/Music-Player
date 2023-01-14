@@ -1,0 +1,172 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    /* vendor prefixing */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root{
+    --background-color: #0F0D13;
+    --player-background-color: #2A2141;
+    --font-color: #E1E1E6;
+    --number-color: #C4C4CC;
+}
+
+body{
+    background-color: var(--background-color);
+}
+
+body *{
+    font-family: 'Roboto', sans-serif;
+}
+
+#app{
+    display: grid;
+    grid-template-columns: max-content max-content;
+    grid-template-areas: 
+    'A B'
+    'A C';
+
+    gap: 2rem;
+    place-content: center;
+    height: 100vh;
+}
+
+/* player-1 */
+
+#player-1{
+    grid-area: A;
+    padding: 4rem 3rem;
+
+    width: fit-content;
+}
+
+#player-1 .wrapper{
+    width: 12rem;
+}
+
+#player-1 img{
+    width: 12rem;
+    height: 12rem;
+    object-fit: cover;
+    border-radius: .3rem;
+}
+
+#player-1 .info{
+    margin-top: 1.5rem
+}
+
+/* player-2 */
+
+#player-2{
+    grid-area: B;
+    height: fit-content;
+}
+
+/* player-3 */
+
+#player-3{
+    grid-area: C;
+    height: fit-content;
+}
+
+.player{
+    background-color: var(--player-background-color);
+    padding: 1.8rem;
+    border-radius: .6rem;
+}
+
+.player img{
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+    border-radius: .3rem;
+}
+
+.info-wrapper{
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.info{
+    color: var(--font-color);
+}
+
+.info h1{
+    font-size: 1.3rem;
+    margin-bottom: .2rem;
+}
+
+.info p{
+    opacity: .67;
+    font-size: 1rem;
+}
+
+.controls{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+}
+
+.horizontal .controls{
+    padding-inline: 2.5rem;
+}
+
+.track{
+    position: relative;
+    margin-top: 1.5rem;
+}
+
+.track::before{
+    content: '';
+    height: .3rem;
+    width: 100%;
+
+    display: block;
+    background-color: #D9D9D9;
+    opacity: .30;
+    border-radius: .5rem;
+
+    position: absolute;
+}
+
+.track::after{
+    content: '';
+    height: .3rem;
+    width: 90%;
+
+    display: block;
+    background-color: #D9D9D9;
+    border-radius: .5rem;
+}
+
+.time{
+    font-size: .8rem;
+    color: var(--number-color);
+    opacity: .70;
+
+    display: flex;
+    justify-content: space-between;
+    margin-top: .5rem;
+}
+
+@media (max-width: 670px){
+    #app{
+        display: flex;
+        flex-direction: column;
+
+        max-width: 270px;
+        margin: auto;
+
+        height: auto;
+        padding-block: 60px;
+    }
+
+    .horizontal .controls{
+        padding-inline: 2.5rem;
+    }
+}
