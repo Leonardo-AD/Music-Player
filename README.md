@@ -10,7 +10,7 @@ Technologies used in this project:
 
 ## Services Used
 
--GitHub
+- GitHub
 
 ## Links
 
