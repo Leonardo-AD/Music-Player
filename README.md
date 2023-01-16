@@ -15,5 +15,3 @@ Technologies used in this project:
 ## Links
 
 You can access the project here: https://leonardo-ad.github.io/Music-Player/
-
-:)
